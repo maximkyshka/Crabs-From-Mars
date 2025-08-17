@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Content/Global/GameResoures/Scenes/MAXCutScene.unity
+    guid: 935810d3c4496764fbd1999ecbf0d7f6
+  - enabled: 1
+    path: Assets/Content/Global/GameResoures/Scenes/MAXStart.unity
+    guid: 498cb1078d79ccf45aa910ba5cdd6b5a
+  - enabled: 1
+    path: Assets/Content/Global/GameResoures/Scenes/MAXGaiaTest.unity
+    guid: 4d8773b85e91c4e42b1cb996fd7c876d
+  m_configObjects: {}
