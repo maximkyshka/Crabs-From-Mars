@@ -2281,7 +2281,7 @@ MonoBehaviour:
   showGizmoz: 1
   legRayoffset: 4
   legRayLength: 8
-  sphereCastRadius: 24.15
+  sphereCastRadius: 2.3
   refreshTimingRate: 60
 --- !u!114 &3013401904175491177
 MonoBehaviour:
