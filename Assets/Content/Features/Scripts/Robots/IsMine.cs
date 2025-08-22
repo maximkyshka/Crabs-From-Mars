@@ -1,10 +1,12 @@
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 
 public class IsMine : MonoBehaviour
 {
     private PhotonView view;
     private RobotControler robotControler;
+    private TMP_Text nickname;
     
     [SerializeField] private GameObject camera;
     
@@ -23,5 +25,11 @@ public class IsMine : MonoBehaviour
             camera.SetActive(false);
             robotControler.enabled = false;
         }
+
+        try
+        {
+            nickname.text = PhotonNetwork.NickName;
+        }
+        catch {}
     }
 }

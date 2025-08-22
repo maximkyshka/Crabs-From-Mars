@@ -9,7 +9,8 @@ public class PhotonConnect : MonoBehaviourPunCallbacks
     [SerializeField] private TMP_InputField inputField;
     [SerializeField] private Button joinRoomButton;
     [SerializeField] private Button createRoomButton;
-    
+    [SerializeField] private TextMeshProUGUI nameText;
+
     [SerializeField] private int loadingScreen;
 
     private void Start()
@@ -43,7 +44,7 @@ public class PhotonConnect : MonoBehaviourPunCallbacks
         {
             return;
         }
-        
+
         PhotonNetwork.CreateRoom(inputField.text, new RoomOptions { MaxPlayers = 6 });
     }
 
@@ -53,7 +54,7 @@ public class PhotonConnect : MonoBehaviourPunCallbacks
         {
             return;
         }
-        
+
         PhotonNetwork.JoinRoom(inputField.text);
     }
 
