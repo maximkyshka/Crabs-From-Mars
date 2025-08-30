@@ -24,7 +24,7 @@ MonoBehaviour:
   m_terrainDepth: 1024
   m_terrainHeight: 1024
   m_seaLevel: 66
-  m_spawnDensity: 3
+  m_spawnDensity: 5
   m_isLocked: 0
   m_previewImageBytes: 
   m_previewImageWidth: 0
@@ -415,18 +415,161 @@ MonoBehaviour:
     sessionPlaybackState: 1
     m_terrainsFoldedOut: 0
     m_serializedExternalAction: 
+  - m_description: RaiseHeight - 4k River 3
+    m_operationType: 4
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:09:01
+    scriptableObjectAssetGUID: 7d2e68cab78931e4c852c77431aded01
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: RaiseHeight - 4k River 3
+    m_operationType: 4
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:11:58
+    scriptableObjectAssetGUID: fb5ba6219fbb962448d761a2bfe1bfb3
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: RaiseHeight - 2K Hills 2
+    m_operationType: 4
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:13:46
+    scriptableObjectAssetGUID: 5157844fca6de3642b246b505dd25f6b
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: RaiseHeight - 4k Island 3
+    m_operationType: 4
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:15:04
+    scriptableObjectAssetGUID: a45d1ac9db9ac6b4db25e4674d4bc940
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Texture(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:17:28
+    scriptableObjectAssetGUID: 49756dbd3ff2361459fbe7b3caee4dfb
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Large Farms(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:17:40
+    scriptableObjectAssetGUID: df8ea7e1ec90d184bbb0508765849ce8
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Large Farms(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:09
+    scriptableObjectAssetGUID: f0300c02622aa48498d27f4983c9d69a
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Large Farms(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:14
+    scriptableObjectAssetGUID: 05cbdf62cf1aa294e93104a7c5526ad2
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Medium Farms(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:26
+    scriptableObjectAssetGUID: 021da51068c08a74bba045ac71c9f2ca
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Small Farms(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:31
+    scriptableObjectAssetGUID: 4fbb2d041431dbf4097760aec381cb83
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Rock(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:35
+    scriptableObjectAssetGUID: ff296683ada6b07468812405e1487a29
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Tree(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:40
+    scriptableObjectAssetGUID: 1717ec201b9946d4daf4884e0d9034c1
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Gaia Pro Sample-Grass(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20250811 - 135811
+    m_operationDateTime: 24.08.2025 12:18:44
+    scriptableObjectAssetGUID: c1c79d75e40d9c241887a735e24bbf72
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
   m_terrainMinMaxCache:
   - guid: 5ff4136e525f89f4ebc3e950287f9309
     isWorldmap: 0
     recalculate: 1
-    min: 0.5312581
-    max: 206.00314
+    min: 0
+    max: 204.47186
   m_bakedMaskCacheEntries:
-  - fileName: Terrain_0_0-20250811 - 135811_LayerGameObject_3072_0,75
+  - fileName: Terrain_0_0-20250811 - 135811_LayerGameObject_3584_5
     assetPath: Assets/Plagin/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20250811
-      - 135811/Terrain_0_0-20250811 - 135811_LayerGameObject_3072_0,75
+      - 135811/Terrain_0_0-20250811 - 135811_LayerGameObject_3584_5
     fullPath: C:/Users/dekryva/Documents/GitHub/Crabs-From-Mars/Assets/Plagin/Procedural
       Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20250811 -
-      135811/Terrain_0_0-20250811 - 135811_LayerGameObject_3072_0,75
+      135811/Terrain_0_0-20250811 - 135811_LayerGameObject_3584_5
     texture: {fileID: 0}
   m_worldBiomeMaskSettings: {fileID: 0}
