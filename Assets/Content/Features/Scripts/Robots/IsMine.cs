@@ -5,7 +5,7 @@ using UnityEngine;
 public class IsMine : MonoBehaviour
 {
     private PhotonView view;
-    private RobotControler robotControler;
+    private MoveController moveController;
     private TMP_Text nickname;
     
     [SerializeField] private GameObject camera;
@@ -13,17 +13,17 @@ public class IsMine : MonoBehaviour
     private void Start()
     {
         view = GetComponent<PhotonView>();
-        robotControler = GetComponent<RobotControler>();
+        moveController = GetComponent<MoveController>();
         
         if (view.IsMine)
         {
             camera.SetActive(true);
-            robotControler.enabled = true;
+            moveController.enabled = true;
         }
         else
         {
             camera.SetActive(false);
-            robotControler.enabled = false;
+            moveController.enabled = false;
         }
 
         try
