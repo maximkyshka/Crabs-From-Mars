@@ -37,7 +37,7 @@ public class MoveController : MonoBehaviour
 
     private void Rotate()
     {
-        Mouse rotateInput = mouseControler.GetMousePosition();
+        MouseData rotateInput = mouseControler.GetMousePosition();
         
         float rotationAmountBody = rotateInput.GetPositionRelativeToCenterForce.x * speedRot * Time.deltaTime;
         float rotationAmountCam = rotateInput.GetPositionRelativeToCenterForce.y * speedRot * Time.deltaTime;

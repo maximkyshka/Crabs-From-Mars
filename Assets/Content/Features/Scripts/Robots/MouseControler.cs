@@ -19,9 +19,9 @@ public class MouseControler : MonoBehaviour
         }
     }
 
-    public Mouse GetMousePosition()
+    public MouseData GetMousePosition()
     {
-        return new Mouse(Input.mousePosition.x, Input.mousePosition.y, isLock);
+        return new MouseData(Input.mousePosition.x, Input.mousePosition.y, isLock);
     }
     
     public void Lock()
@@ -49,10 +49,17 @@ public class MouseControler : MonoBehaviour
 /// <summary>
 /// Mouse by MAX
 /// </summary>
-/// <param name="Mouse">Mouse</param>
+/// <param name="MouseData">MouseData</param>
 
-public class Mouse
+public class MouseData
 {
+    public MouseData(float mousePositionX, float mousePositionY, bool isLock)
+    {
+        x = (int)mousePositionX;
+        y = (int)mousePositionY;
+        isLocked = isLock;
+    }
+
     private static int x;
     private static int y;
     private static bool isLocked;
@@ -62,16 +69,16 @@ public class Mouse
     public static bool IsLocked { get => isLocked; }
     
     public static Vector2 Position { get { return new Vector2(x, y); } }
-    public static Vector2 GetPositionRelativeToCenter { get { return Screen.GetPositionRelativeToCenter(x, y); } }
-    public Vector2 GetPositionRelativeToCenterForce { get { return Screen.GetPositionRelativeToCenterForce(x, y); } }
+    public static Vector2 GetPositionRelativeToCenter { get { return ScreenData.GetPositionRelativeToCenter(x, y); } }
+    public Vector2 GetPositionRelativeToCenterForce { get { return ScreenData.GetPositionRelativeToCenterForce(x, y); } }
 }
 
 /// <summary>
 /// Screen by MAX
 /// </summary>
-/// <param name="Screen">Screen</param>
+/// <param name="ScreenData">ScreenData</param>
 
-public class Screen
+public class ScreenData
 {
     public static int Width { get => UnityEngine.Screen.width; }
     public static int Height { get => UnityEngine.Screen.height; }
