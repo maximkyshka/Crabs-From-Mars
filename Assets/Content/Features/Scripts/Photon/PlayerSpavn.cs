@@ -17,7 +17,7 @@ public class PlayerSpavn : MonoBehaviourPunCallbacks
                 );
 
         GameObject t =  PhotonNetwork.Instantiate(_player.name, transform.position + RandomSpavnOfset, Quaternion.identity);
-        t.name = PhotonNetwork.NickName;
+        //t.name = PhotonNetwork.NickName;
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)

@@ -2436,6 +2436,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   speedRot: 30
+  jumpForce: 10
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &3774292608095409774
 MonoBehaviour:
   m_ObjectHideFlags: 0
