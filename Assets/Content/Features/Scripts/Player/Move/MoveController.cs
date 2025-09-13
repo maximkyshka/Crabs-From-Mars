@@ -21,9 +21,18 @@ public class MoveController : MonoBehaviour
         camera = GetComponentInChildren<Camera>();
     }
 
+    private void Update()
+    {
+        IsGroundDetec();
+        Move();
+        Jump();
+        Rotate();
+    }
+
     private void Move()
     {
         Vector3 t = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
+        Debug.Log(t);
         rb.linearVelocity = t * speed;
     }
 
