@@ -47,15 +47,17 @@ public class ItemViev : MonoBehaviour
             Reload();
         }
     }
+    
+    public void SetItem(Item Item){ item = Item; Setup(); }
 
-    private void Setup() 
+    public void Setup() 
     { 
-        image.sprite = item.Sprite; 
-        nameText.text = item.Name; 
-        descriptionText.text = item.Description;
+        image.sprite = item.Sprite != null ? item.Sprite : null; 
+        nameText.text = item.Name != null ? item.Name : null; 
+        descriptionText.text = item.Description != null ? item.Description : null;
         button.onClick.AddListener(Use);
         Reload(); 
     }
 
-    private void Reload() { numText.text = num == 0 ? "" : num.ToString(); }
+    private void Reload() { numText.text = num == 1 ? "" : num.ToString(); }
 }
