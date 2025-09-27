@@ -3,31 +3,85 @@ using static Items;
 
 public class ItemInventory : MonoBehaviour
 {
-    [SerializeField] private ItemArray[] itemsInventory;
-    [SerializeField] private ItemArray itemsHotBar;
+    [SerializeField] private ItemViev[] itemVievs;
+    [SerializeField] private Item[] items;
+    [SerializeField] private int[] itemsNum;
     
+    [SerializeField] private Item Null;
     
-    [SerializeField] private Item item;
+    [SerializeField] private int itemSelected;
 
-    private void Update()
+    public bool UseItem(int index, int num)
     {
-        for (int i = 0; i < itemsInventory.Length; i++)
+        if(items[index] != Null && itemsNum[index] >= num)
         {
-            for (int j = 0; j < itemsInventory[i].items.Length; j++)
-            {
-                itemsInventory[i].itemVievs[j].SetItem(itemsInventory[i].items[j]);
-            }
+            itemsNum[index] -= num;
+            ReloadHotBar();
+            return true;
         }
-
-        for (int i = 0; i < itemsHotBar.items.Length; i++)
+        else
         {
-            itemsHotBar.itemVievs[i].SetItem(itemsHotBar.items[i]);
+            return false;
         }
     }
-}
+    
+    public bool AddItem(Item item, int num)
+    {
+        int slot = -1;
+        
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] == item && slot == -1)
+            {
+                slot = i;
+            }
+        }
+        
+        if (slot == -1)
+        {
+            if (items[itemSelected] != Null)
+            {
+                for (int i = 0; i < items.Length; i++)
+                {
+                    if (items[i] == Null && slot == -1)
+                    {
+                        itemsNum[slot] = 0;
+                        slot = i;
+                    }
+                }
+            }
+            else
+            {
+                slot = itemSelected;
+            }
+        }
+        
+        if (slot != -1)
+        {
+            return false;
+        }
+        else
+        {
+            items[slot] = item;
+            itemsNum[slot] += num;
+            ReloadHotBar();
+            return true;
+        }
+    }
 
-class ItemArray
-{
-    public ItemViev[] itemVievs;
-    public Item[] items;
+    private void ReloadHotBar()
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (itemsNum[i] <= 0)
+            {
+                itemVievs[i].SetItem(Null, 1, i);
+                items[i] = Null;
+            }
+            else
+            {
+                itemVievs[i].SetItem(items[i], itemsNum[i], i);
+            }
+        }
+    }
 }

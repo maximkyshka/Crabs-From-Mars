@@ -1,42 +1,22 @@
 using UnityEngine;
 using static Items;
-using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
+using TMPro;
 
 public class ItemViev : MonoBehaviour
 {
+    [SerializeField] private int index = -1;
     [SerializeField] private Item item;
     [SerializeField] private Image image;
-    [SerializeField] private Text numText;
-    [SerializeField] private GameObject panelDescription;
-    [SerializeField] private Text nameText;
-    [SerializeField] private Text descriptionText;
+    [SerializeField] private TMP_Text numText;
     [SerializeField] private Button button;
-    
-    private bool isDragging;
 
-    public int num
-    {
-        get => num;
-        set
-        {
-            num = value;
-            Reload();
-        }
-    }
+    public int num;
     
     private void Start()
     {
         Setup();
-    }
-
-    private void Update()
-    {
-        if (!isDragging)
-        {
-            
-        }
     }
 
     private void Use()
@@ -48,13 +28,11 @@ public class ItemViev : MonoBehaviour
         }
     }
     
-    public void SetItem(Item Item){ item = Item; Setup(); }
+    public void SetItem(Item Item, int Value, int Index){ item = Item; Setup(); num = Value; index = Index; }
 
     public void Setup() 
     { 
         image.sprite = item.Sprite != null ? item.Sprite : null; 
-        nameText.text = item.Name != null ? item.Name : null; 
-        descriptionText.text = item.Description != null ? item.Description : null;
         button.onClick.AddListener(Use);
         Reload(); 
     }
