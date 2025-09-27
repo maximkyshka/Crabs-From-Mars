@@ -5,7 +5,7 @@ public class Starve : MonoBehaviour
 {
     public static event Action<int> OnStarveChanged;
 
-    [SerializeField] private int hunger = 100;
+    public int hunger = 100;
     [SerializeField] private int decreaseRate = 1;
     [SerializeField] private float updateDelay = 1f;
 
@@ -19,6 +19,7 @@ public class Starve : MonoBehaviour
     private void Start()
     {
         StartCoroutine(UpdateStarve());
+        OnStarveChanged?.Invoke(hunger);
     }
 
     private System.Collections.IEnumerator UpdateStarve()
