@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using static Items;
 
@@ -11,11 +12,16 @@ public class ItemInventory : MonoBehaviour
     
     [SerializeField] private int itemSelected;
 
+    private void Awake()
+    {
+        ReloadHotBar();
+    }
+
     public bool UseItem(int index, int num)
     {
         if(items[index] != Null && itemsNum[index] >= num)
         {
-            itemsNum[index] -= num;
+            if(items[index].IsStackable) itemsNum[index] -= num;
             ReloadHotBar();
             return true;
         }
@@ -63,7 +69,7 @@ public class ItemInventory : MonoBehaviour
         else
         {
             items[slot] = item;
-            itemsNum[slot] += num;
+            itemsNum[slot] += item.IsStackable ? num : -1;
             ReloadHotBar();
             return true;
         }

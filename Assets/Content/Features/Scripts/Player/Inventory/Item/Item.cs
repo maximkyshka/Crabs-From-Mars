@@ -10,6 +10,9 @@ public class Items
     
         [SerializeField] private ItemType itemType;
         public ItemType ItemType { get => itemType; }
+        
+        [SerializeField] private bool isStackable;
+        public bool IsStackable { get => isStackable; }
     }
     
     public enum ItemType

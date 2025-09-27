@@ -12,30 +12,17 @@ public class ItemViev : MonoBehaviour
     [SerializeField] private TMP_Text numText;
     [SerializeField] private Button button;
 
-    public int num;
+    public int num = -1;
     
-    private void Start()
-    {
-        Setup();
-    }
+    public void SetItem(Item Item, int Value, int Index){ item = Item; num = Value; index = Index; Setup();}
 
-    private void Use()
+    public void Setup()
     {
-        if (num > 0)
-        {
-            num--;
-            Reload();
-        }
-    }
-    
-    public void SetItem(Item Item, int Value, int Index){ item = Item; Setup(); num = Value; index = Index; }
-
-    public void Setup() 
-    { 
-        image.sprite = item.Sprite != null ? item.Sprite : null; 
-        button.onClick.AddListener(Use);
+        if (item.Sprite == null) image.enabled = false; 
+        else image.sprite = item.Sprite != null ? item.Sprite : null;
+        
         Reload(); 
     }
 
-    private void Reload() { numText.text = num == 1 ? "" : num.ToString(); }
+    private void Reload() { numText.text = num == 1 ? "" : num == -1 ? "" : num.ToString(); }
 }
