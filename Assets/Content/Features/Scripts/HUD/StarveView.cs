@@ -26,12 +26,4 @@ public class Starveview : MonoBehaviour
         hungerBar.value = hungerValue;
         hungerText.text = hungerValue.ToString();
     }
-    //private void Update()
-    //{
-    //    if (currentStarve == null || hungerBar == null || hungerText == null) return;
-    //    {
-    //        hungerBar.value = currentStarve.hunger;
-    //        hungerText.text = currentStarve.hunger.ToString();
-    //    }
-    //}
 }
