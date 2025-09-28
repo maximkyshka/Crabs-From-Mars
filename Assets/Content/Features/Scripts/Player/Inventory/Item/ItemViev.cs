@@ -13,8 +13,14 @@ public class ItemViev : MonoBehaviour
     [SerializeField] private Button button;
 
     public int num = -1;
-    
-    public void SetItem(Item Item, int Value, int Index){ item = Item; num = Value; index = Index; Setup();}
+
+    public void SetItem(Item Item, int Value, int Index)
+    {
+        item = Item; 
+        num = Value; 
+        index = Index; 
+        Setup();
+    }
 
     public void Setup()
     {
@@ -24,5 +30,8 @@ public class ItemViev : MonoBehaviour
         Reload(); 
     }
 
-    private void Reload() { numText.text = num == 1 ? "" : num == -1 ? "" : num.ToString(); }
+    private void Reload()
+    {
+        numText.text = num == 1 ? "" : num == -1 ? "" : num.ToString();
+    }
 }

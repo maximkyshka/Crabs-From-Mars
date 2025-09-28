@@ -1,5 +1,15 @@
-public interface IItemObj
+using UnityEngine;
+
+public class ItemObj : MonoBehaviour, IItemObj
 {
-    int Count { get; set; }
-    Items.Item ItemType { get; set; }
+    public int count;
+    public Items.Item itemType;
+    public int Count()
+    {
+        return count;
+    }
+    public Items.Item ItemType()
+    {
+        return itemType;
+    }
 }

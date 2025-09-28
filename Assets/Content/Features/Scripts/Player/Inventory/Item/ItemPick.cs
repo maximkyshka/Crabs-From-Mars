@@ -19,7 +19,10 @@ public class ItemPick : MonoBehaviour
         {
             if (hitCollider.gameObject.TryGetComponent(out IItemObj item))
             {
-                itemInventory.AddItem(item.ItemType, item.Count);
+                if (itemInventory.AddItem(item.ItemType(), item.Count()))
+                {
+                    Destroy(hitCollider.gameObject);
+                }
             }
         }
     }
