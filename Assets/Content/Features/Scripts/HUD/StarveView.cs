@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class Starveview : MonoBehaviour
+public class StarveView : MonoBehaviour, IStarveView
 {
     [SerializeField] private Slider hungerBar;
     [SerializeField] private TMP_Text hungerText;
@@ -19,7 +19,7 @@ public class Starveview : MonoBehaviour
         Starve.OnStarveChanged -= UpdateView;
     }
 
-    private void UpdateView(int hungerValue)
+    public void UpdateView(int hungerValue)
     {
         if (currentStarve == null || hungerBar == null || hungerText == null) return;
 

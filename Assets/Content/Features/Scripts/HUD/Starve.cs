@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-public class Starve : MonoBehaviour
+public class Starve : MonoBehaviour, IStarve
 {
     public static event Action<int> OnStarveChanged;
 
@@ -22,7 +22,7 @@ public class Starve : MonoBehaviour
         OnStarveChanged?.Invoke(hunger);
     }
 
-    private System.Collections.IEnumerator UpdateStarve()
+    public System.Collections.IEnumerator UpdateStarve()
     {
         while (true)
         {
@@ -40,7 +40,7 @@ public class Starve : MonoBehaviour
         }
     }
 
-    private int CalculateDynamicRate()
+    public int CalculateDynamicRate()
     {
         if (health == null) return decreaseRate;
 
@@ -49,9 +49,5 @@ public class Starve : MonoBehaviour
         if (hpPercent < 0.5f) return decreaseRate * 2;
 
         return decreaseRate;
-    }
-    public void Update()
-    {
-        
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthView : MonoBehaviour
+public class HealthView : MonoBehaviour, IHealthView
 {
     [SerializeField] private Health health;
     [SerializeField] private Slider healthSlider;
@@ -33,7 +33,7 @@ public class HealthView : MonoBehaviour
         }
     }
 
-    private void UpdateUI(int current, int max)
+    public void UpdateUI(int current, int max)
     {
         if (healthSlider != null)
         {
@@ -47,7 +47,7 @@ public class HealthView : MonoBehaviour
         }
     }
 
-    private void ShowDeathScreen()
+    public  void ShowDeathScreen()
     {
         if (deathScreen != null)
             deathScreen.SetActive(true);
