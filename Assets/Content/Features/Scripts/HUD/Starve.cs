@@ -26,11 +26,6 @@ public class Starve : MonoBehaviour, IStarve
     {
         while (true)
         {
-            if (hunger <= 0)
-            {
-                yield return new WaitForSeconds(1f);
-                health.TakeDamage(20);
-            }
             yield return new WaitForSeconds(updateDelay);
 
             int rate = CalculateDynamicRate();
