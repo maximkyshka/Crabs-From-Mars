@@ -5,8 +5,8 @@ using UnityEngine;
 public class IsMine : MonoBehaviour
 {
     private PhotonView view;
-    private PlayerMovment playerMovment;
-    private PlayerLook playerLook;
+    //private //PlayerMovment playerMovment;
+    //private //PlayerLook playerLook;
     private TMP_Text nickname;
     
     [SerializeField] private GameObject camera;
@@ -14,20 +14,20 @@ public class IsMine : MonoBehaviour
     private void Start()
     {
         view = GetComponent<PhotonView>();
-        playerMovment = GetComponent<PlayerMovment>();
-        playerLook = GetComponent<PlayerLook>();
+        //playerMovment = GetComponent<PlayerMovment>();
+       // playerLook = GetComponent<PlayerLook>();
         
         if (view.IsMine)
         {
             camera.SetActive(true);
-            playerMovment.enabled = true;
-            playerLook.enabled = true;
+            //playerMovment.enabled = true;
+            //playerLook.enabled = true;
         }
         else
         {
             camera.SetActive(false);
-            playerMovment.enabled = false;
-            playerLook.enabled = false;
+            //playerMovment.enabled = false;
+            //playerLook.enabled = false;
         }
 
         try

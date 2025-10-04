@@ -29348,8 +29348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemPick
   pickUpRange: 10
   layerMask:
-    serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!114 &862687242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29385,36 +29384,6 @@ MonoBehaviour:
   itemsNum: 010000000300000004000000040000000400000001000000010000000400000001000000
   Null: {fileID: 11400000, guid: 874a28572d5c72e4e8abf6e7019b33b8, type: 2}
   itemSelected: 2
---- !u!114 &862687243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862687217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af56bc0a65b257b4a9d703b67fd334a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movment
-  inputVector:
-    m_Name: Input Vector
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 595aafd0-d21e-4254-9f6b-8f1acf28d63d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  inputShift:
-    m_Name: Input Shift
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: a361fb05-4f75-4f53-a6c6-97fce2f73bf8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1001 &864586498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43461,7 +43430,7 @@ MonoBehaviour:
     m_foamEdge: 0.25
     m_foamMoveSpeed: 0.3
   m_player: {fileID: 1141107701}
-  m_RenderCamera: {fileID: 0}
+  m_RenderCamera: {fileID: 1141107703}
   m_gameCamera: {fileID: 1141107703}
   m_RenderPath: 0
   m_waterMaterialInstances:
@@ -49517,9 +49486,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7482324143636027001, guid: 1113596e8f36b5d419f66d5ecca5f4d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 862687242}
-    - targetCorrespondingSourceObject: {fileID: 7482324143636027001, guid: 1113596e8f36b5d419f66d5ecca5f4d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862687243}
   m_SourcePrefab: {fileID: 100100000, guid: 1113596e8f36b5d419f66d5ecca5f4d3, type: 3}
 --- !u!1001 &1359055207
 PrefabInstance:

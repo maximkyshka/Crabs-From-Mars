@@ -4,7 +4,8 @@ public class ItemPick : MonoBehaviour
 {
     private ItemInventory itemInventory;
     
-    float pickUpRange = 10f;
+    [SerializeField] private float pickUpRange = 10f;
+    [SerializeField] private LayerMask layerMask;
 
     private void Awake()
     {
@@ -13,7 +14,7 @@ public class ItemPick : MonoBehaviour
 
     private void Update()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickUpRange);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickUpRange, layerMask);
         
         foreach (var hitCollider in hitColliders)
         {
