@@ -11,17 +11,19 @@ public class StarveView : MonoBehaviour, IStarveView
 
     private void OnEnable()
     {
-        Starve.OnStarveChanged += UpdateView;
+        if (currentStarve != null)
+            currentStarve.OnStarveChanged += UpdateView;
     }
 
     private void OnDisable()
     {
-        Starve.OnStarveChanged -= UpdateView;
+        if (currentStarve != null)
+            currentStarve.OnStarveChanged -= UpdateView;
     }
 
     public void UpdateView(int hungerValue)
     {
-        if (currentStarve == null || hungerBar == null || hungerText == null) return;
+        if (hungerBar == null || hungerText == null) return;
 
         hungerBar.value = hungerValue;
         hungerText.text = hungerValue.ToString();

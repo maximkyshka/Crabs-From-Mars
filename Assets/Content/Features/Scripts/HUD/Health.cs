@@ -8,8 +8,8 @@ public class Health : MonoBehaviour, IHealth
     public int MaxHealth => maxHealth;
     public int CurrentHealth => health;
 
-    public Action<int, int> OnHealthChanged;
-    public Action OnDeath;
+    public Action<int, int> OnHealthChanged {get;set;}
+    public Action OnDeath { get; set; }
 
     void Awake()
     {

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System;
-
+using System.Collections;
 public class Starve : MonoBehaviour, IStarve
 {
-    public static event Action<int> OnStarveChanged;
+    public event Action<int> OnStarveChanged;
 
     public int hunger = 100;
     [SerializeField] private int decreaseRate = 1;
@@ -26,11 +26,15 @@ public class Starve : MonoBehaviour, IStarve
     {
         while (true)
         {
+            if (hunger <= 0)
+            {
+                yield return new WaitForSeconds(1f);
+                health.TakeDamage(10);
+            }
             yield return new WaitForSeconds(updateDelay);
 
             int rate = CalculateDynamicRate();
             hunger = Mathf.Max(0, hunger - rate);
-
             OnStarveChanged?.Invoke(hunger);
         }
     }
