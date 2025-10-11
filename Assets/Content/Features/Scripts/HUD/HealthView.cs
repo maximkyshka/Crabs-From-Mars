@@ -2,33 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthView : MonoBehaviour, IHealthView
+public class HealthView : MonoBehaviour
 {
     [SerializeField] private Health health;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private GameObject deathScreen;
 
-    public Health Health
-    {
-        get => health;
-        set => health = value;
-    }
-    public Slider HealthSlider
-    {
-        get => healthSlider;
-        set => healthSlider = value;
-    }
-    public TMP_Text HealthText
-    {
-        get => healthText;
-        set => healthText = value;
-    }
-    public GameObject DeathScreen
-    {
-        get => deathScreen;
-        set => deathScreen = value;
-    }
     void Awake()
     {
         if (health == null)
@@ -53,7 +33,7 @@ public class HealthView : MonoBehaviour, IHealthView
         }
     }
 
-    public void UpdateUI(int current, int max)
+    private void UpdateUI(int current, int max)
     {
         if (healthSlider != null)
         {
@@ -67,7 +47,7 @@ public class HealthView : MonoBehaviour, IHealthView
         }
     }
 
-    public  void ShowDeathScreen()
+    private void ShowDeathScreen()
     {
         if (deathScreen != null)
             deathScreen.SetActive(true);

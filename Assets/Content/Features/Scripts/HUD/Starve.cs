@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
-public class Starve : MonoBehaviour, IStarve
+
+public class Starve : MonoBehaviour
 {
-    public event Action<int> OnStarveChanged;
+    public static event Action<int> OnStarveChanged;
 
     public int hunger = 100;
     [SerializeField] private int decreaseRate = 1;
     [SerializeField] private float updateDelay = 1f;
 
-    private IHealth health;
-    public int Hunger
-    {
-        get => hunger;
-        set => hunger = value;
-    }
+    private Health health;
+
     private void Awake()
     {
         health = GetComponent<Health>();
@@ -26,24 +22,25 @@ public class Starve : MonoBehaviour, IStarve
         OnStarveChanged?.Invoke(hunger);
     }
 
-    public System.Collections.IEnumerator UpdateStarve()
+    private System.Collections.IEnumerator UpdateStarve()
     {
         while (true)
         {
             if (hunger <= 0)
             {
                 yield return new WaitForSeconds(1f);
-                health.TakeDamage(10);
+                health.TakeDamage(20);
             }
             yield return new WaitForSeconds(updateDelay);
 
             int rate = CalculateDynamicRate();
             hunger = Mathf.Max(0, hunger - rate);
+
             OnStarveChanged?.Invoke(hunger);
         }
     }
 
-    public int CalculateDynamicRate()
+    private int CalculateDynamicRate()
     {
         if (health == null) return decreaseRate;
 
@@ -52,5 +49,9 @@ public class Starve : MonoBehaviour, IStarve
         if (hpPercent < 0.5f) return decreaseRate * 2;
 
         return decreaseRate;
+    }
+    public void Update()
+    {
+        
     }
 }
