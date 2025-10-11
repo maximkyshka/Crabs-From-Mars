@@ -18,10 +18,7 @@ public interface ICharacter
     public float HitDamageSpeed { get; set; }
     public float HitDamageRadius { get; set; }
     
-    public float SpeedTurn { get; set; }
-    public float SpeedWalk { get; set; }
-    public float SpeedRun { get; set; }
-    public AnimationCurve SpeedCurve { get; set; }
+   
 
     public void Instantiate(CharacterSetings character);
 }
