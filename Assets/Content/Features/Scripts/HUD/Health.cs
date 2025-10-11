@@ -1,15 +1,16 @@
 using UnityEngine;
 using System;
-public class Health : MonoBehaviour, IHealth
+
+public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth { get; set; } = 100;
-    private int health { get; set; }
+    [SerializeField] private int maxHealth = 100;
+    private int health;
 
     public int MaxHealth => maxHealth;
     public int CurrentHealth => health;
 
-    public Action<int, int> OnHealthChanged {get;set;}
-    public Action OnDeath { get; set; }
+    public Action<int, int> OnHealthChanged;
+    public Action OnDeath;
 
     void Awake()
     {
