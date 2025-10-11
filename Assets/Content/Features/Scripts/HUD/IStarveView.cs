@@ -1,6 +1,11 @@
-using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public interface IStarveView
 {
-    public void UpdateView(int hungerValue);
+    Slider HungerBar { get; set; }
+    TMP_Text HungerText { get; set; }
+    Starve CurrentStarve { get; set; }
+
+    void UpdateView(int hungerValue);
 }
