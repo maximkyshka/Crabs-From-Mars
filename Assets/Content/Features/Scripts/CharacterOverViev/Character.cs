@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Character : MonoBehaviour, ICharacter
+public class Character : MonoBehaviour
 {
     [Header("Health")]
     [field: SerializeField] public int HealthCurrent { get; set; }

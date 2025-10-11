@@ -13,12 +13,6 @@ public interface ICharacter
     
     public int FoodCurrent { get; set; }
     public bool Eat(int food);
-    
-    public int HitDamage { get; set; }
-    public float HitDamageSpeed { get; set; }
-    public float HitDamageRadius { get; set; }
-    
    
 
-    public void Instantiate(CharacterSetings character);
 }
