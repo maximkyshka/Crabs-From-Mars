@@ -1,9 +1,13 @@
 using System;
-using UnityEngine;
+using System.Collections;
 
 public interface IStarve
 {
-    public event Action<int> OnStarveChanged;
-    public System.Collections.IEnumerator UpdateStarve();
-    public int CalculateDynamicRate();
+    event Action<int> OnStarveChanged;
+
+    int Hunger { get; set; }
+
+    IEnumerator UpdateStarve();
+
+    int CalculateDynamicRate();
 }

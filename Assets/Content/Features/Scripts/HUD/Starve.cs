@@ -9,8 +9,12 @@ public class Starve : MonoBehaviour, IStarve
     [SerializeField] private int decreaseRate = 1;
     [SerializeField] private float updateDelay = 1f;
 
-    private Health health;
-
+    private IHealth health;
+    public int Hunger
+    {
+        get => hunger;
+        set => hunger = value;
+    }
     private void Awake()
     {
         health = GetComponent<Health>();
