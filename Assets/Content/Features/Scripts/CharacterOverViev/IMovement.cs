@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IMovment 
+public interface IMovement 
 {
     public float SpeedTurn { get; set; }
     public float SpeedWalk { get; set; }

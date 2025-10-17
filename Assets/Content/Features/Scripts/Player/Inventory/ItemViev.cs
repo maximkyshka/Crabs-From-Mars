@@ -24,6 +24,7 @@ public class ItemViev : MonoBehaviour
 
     public void Setup()
     {
+        if(index == -1) return;
         if (item.Sprite == null) image.enabled = false; 
         else image.sprite = item.Sprite != null ? item.Sprite : null;
         
