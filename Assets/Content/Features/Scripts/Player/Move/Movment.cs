@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Movment : MonoBehaviour
@@ -35,4 +35,4 @@ public class Movment : MonoBehaviour
         speedRun = character.SpeedRun;
         speedCurve = character.SpeedCurve;
     }
-}
+}*/

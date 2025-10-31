@@ -18,9 +18,6 @@ public class PhotonConnect : MonoBehaviourPunCallbacks
         Debug.Log("Connecting to Master...");
         PhotonNetwork.ConnectUsingSettings();
 
-        joinRoomButton.interactable = false;
-        createRoomButton.interactable = false;
-
         joinRoomButton.onClick.AddListener(JoinRoom);
         createRoomButton.onClick.AddListener(CreateRoom);
     }

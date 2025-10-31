@@ -6,4 +6,4 @@ public interface ICombat
     public float HitDamageSpeed { get; set; }
     public float HitDamageRadius { get; set; }
     public LayerMask CanHit { get; set; }
-} 
+}

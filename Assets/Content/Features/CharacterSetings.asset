@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1311992f66c39d74d8ef8ce6c3587fa2, type: 3}
+  m_Name: CharacterSetings
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSetings
+  model: {fileID: 100000, guid: 23bd65e996e9f294c9fd86567355e778, type: 3}
+  maxHealth: 400
+  regenerationSpeed: 123
+  speedTurn: 50
+  speedWalk: 50
+  speedRun: 100
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.011177063
+      value: 1.0110283
+      inSlope: -1.0164657
+      outSlope: -1.0164657
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0107422
+      value: -0.02771759
+      inSlope: 0.07994627
+      outSlope: 0.07994627
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.022398945
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hitDamage: 0
+  hitSpeed: 0
+  hitRadius: 0

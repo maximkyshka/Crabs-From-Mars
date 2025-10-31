@@ -1,16 +1,9 @@
-using UnityEngine;
-
-public class IHealse : MonoBehaviour
+public interface IHealse
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public int Healse { get; set; }
+   public int HealseMax { get; set; }
+   public int Regen { get; set; }
+   public void Healsed(int healse);
+   public void Hit(int Damage);
+   public void Die();
 }

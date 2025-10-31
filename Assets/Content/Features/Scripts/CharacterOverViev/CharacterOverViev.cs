@@ -1,5 +1,4 @@
 using Photon.Pun;
-using TMPro;
 using UnityEngine;
 
 public class CharacterOverViev : MonoBehaviour
@@ -10,36 +9,36 @@ public class CharacterOverViev : MonoBehaviour
     [Header("MultyPlayer")]
     [SerializeField] private bool isMine;
     [SerializeField] private string nickName = "Djone";
-    [SerializeField] private TMP_Text textNickName;
     PhotonView view;
 
-    [Header("MultyPlayer")] 
+    [Header("Other")] 
     [SerializeField] private Transform model;
+
     
-    private Character character;
+    private IMovement movement;
+    private ICombat combat;
+    private IHealse healse;
 
     private void Awake()
     {
         view = GetComponent<PhotonView>();
         isMine = view.IsMine;
-        textNickName.text = PhotonNetwork.NickName;
+        nickName = PhotonNetwork.NickName;
         Reload();
+        
+        movement = GetComponentInChildren<IMovement>();
+        combat = GetComponentInChildren<ICombat>();
+        healse = GetComponentInChildren<IHealse>();
     }
     
     [ContextMenu("Reload")]
     private void Reload()
     {
-        if (textNickName != null)
-        {
-            textNickName.text = nickName;
-        }
         
         if (model != null)
         {
             Destroy(model.GetComponentInChildren<GameObject>());
             Instantiate(characterSettings?.Model, model);
         }
-        
-        character.Instantiate(characterSettings);
     }
 }
