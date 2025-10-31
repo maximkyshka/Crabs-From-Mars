@@ -1,11 +1,9 @@
 public interface IHealse
 {
-    public int MaxHealse { get; set; }
-    public int Healse { get; set; }
-    public int RegenerationSpeed { get; set; }
-    
-    public void Healsed(int healsed);
-    public void Hit(int damage);
-    
-    public void Die();
+   public int Healse { get; set; }
+   public int HealseMax { get; set; }
+   public int Regen { get; set; }
+   public void Healsed(int healse);
+   public void Hit(int Damage);
+   public void Die();
 }

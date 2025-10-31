@@ -2,29 +2,28 @@
 
 public class HealsePlayerControler : MonoBehaviour, IHealse
 {
-    public int MaxHealse { get; set; }
     public int Healse { get; set; }
-    public int RegenerationSpeed { get; set; }
-    public void Healsed(int healsed)
+    public int HealseMax { get; set; }
+    public int Regen { get; set; }
+    public void Healsed(int healse)
     {
-        Healse += healsed;
-        Healse = Mathf.Clamp(Healse, 0, MaxHealse);
+        Healse += healse;
+        Healse = Mathf.Clamp(Healse, 0, HealseMax);
     }
 
-    public void Hit(int damage)
+    public void Hit(int Damage)
     {
-        Healse -= damage;
-        
+        Healse -= Damage;
+        if (Healse <= 0) Die();
     }
-    
-    [ContextMenu("Die")]
+
     public void Die()
     {
-        Debug.Log($"I'm dead {((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}{((Letar)Random.Range(0, 52)).ToString()}");
+        Debug.Log("Die");
     }
 
-    enum Letar
+    public void Regened(int regen)
     {
-        A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
+        throw new System.NotImplementedException();
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GRCControllerSupport
   m_EditorClassIdentifier: 
   m_unfolded: 0
-  m_isActive: 0
+  m_isActive: 1
   m_helpEnabled: 0
   m_orderNumber: 100
   m_selectedControllerType: 0

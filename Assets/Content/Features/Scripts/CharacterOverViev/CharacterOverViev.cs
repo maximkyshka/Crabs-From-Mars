@@ -1,5 +1,4 @@
 using Photon.Pun;
-using TMPro;
 using UnityEngine;
 
 public class CharacterOverViev : MonoBehaviour
@@ -12,10 +11,10 @@ public class CharacterOverViev : MonoBehaviour
     [SerializeField] private string nickName = "Djone";
     PhotonView view;
 
-    [Header("MultyPlayer")] 
+    [Header("Other")] 
     [SerializeField] private Transform model;
+
     
-    [SerializeField] private GameObject PlayerControlerObject;
     private IMovement movement;
     private ICombat combat;
     private IHealse healse;
@@ -25,43 +24,21 @@ public class CharacterOverViev : MonoBehaviour
         view = GetComponent<PhotonView>();
         isMine = view.IsMine;
         nickName = PhotonNetwork.NickName;
-        
-        movement = PlayerControlerObject.GetComponent<IMovement>();
-        combat = PlayerControlerObject.GetComponent<ICombat>();
-        healse = PlayerControlerObject.GetComponent<IHealse>();
-        
         Reload();
+        
+        movement = GetComponentInChildren<IMovement>();
+        combat = GetComponentInChildren<ICombat>();
+        healse = GetComponentInChildren<IHealse>();
     }
     
     [ContextMenu("Reload")]
     private void Reload()
     {
-        if (movement != null && characterSettings != null)
-        {
-            movement.SpeedTurn = characterSettings.SpeedTurn;
-            movement.SpeedWalk = characterSettings.SpeedWalk;
-            movement.SpeedRun = characterSettings.SpeedRun;
-            movement.SpeedCurve = characterSettings.SpeedCurve;
-        }
         
-        if (combat != null && characterSettings != null)
-        {
-            combat.HitDamage = characterSettings.HitDamage;
-            combat.HitDamageSpeed = characterSettings.HitSpeed;
-            combat.HitDamageRadius = characterSettings.HitRadius;
-        }
-        
-        if (healse != null && characterSettings != null)
-        {
-            healse.MaxHealse = characterSettings.MaxHealth;
-            healse.Healse = characterSettings.MaxHealth;
-            healse.RegenerationSpeed = (int)characterSettings.RegenerationSpeed;
-        }
-        
-        if (model != null && characterSettings != null)
+        if (model != null)
         {
             Destroy(model.GetComponentInChildren<GameObject>());
-            Instantiate(characterSettings.Model, model);
+            Instantiate(characterSettings?.Model, model);
         }
     }
 }
