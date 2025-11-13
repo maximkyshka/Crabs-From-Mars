@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
+--- !u!114 &-3944905781043281132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de82eef1d1f4fe64bb00feb5caaadbd7, type: 3}
-  m_Name: GD Desktop Settings
+  m_Name: Gaia Defaults
   m_EditorClassIdentifier: 
   m_defaultsID: 43d3c9da-e521-49e3-961f-fcfc4ba338c7
   m_seaLevel: 50
@@ -39,3 +39,36 @@ MonoBehaviour:
   m_detailResolutionPerPatch: 16
   m_controlTextureResolution: 1024
   m_baseMapSize: 1024
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc9961a916782e48bc0339e84343ca6, type: 3}
+  m_Name: 20251031-200247 Creating World
+  m_EditorClassIdentifier: GaiaCore::Gaia.WorldCreationSettings
+  m_targetSizePreset: 4
+  m_qualityPreset: 2
+  m_xTiles: 1
+  m_zTiles: 1
+  m_tileSize: 1024
+  m_tileHeight: 1024
+  m_dateTimeString: 20251031 - 200247
+  m_seaLevel: 50
+  m_createInScene: 0
+  m_autoUnloadScenes: 0
+  m_addLoadingScreen: 0
+  m_applyFloatingPointFix: 0
+  m_recenterOnUpdate: 0
+  m_centerOffset: {x: 0, y: 0}
+  m_isWorldMap: 0
+  m_autoSpawnBiome: 1
+  m_gaiaDefaults: {fileID: -3944905781043281132}
+  m_spawnerPresetList: []
+  m_worldMapStampSettings: {fileID: 0}
+  m_oldTerrainOffsetX: 0
+  m_oldTerrainOffsetZ: 0
