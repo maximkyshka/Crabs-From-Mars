@@ -1,5 +1,5 @@
 public interface IItemObj
 {
-    public int Count();
-    public Items.Item ItemType();
+    int Count();
+    Item ItemType();
 }

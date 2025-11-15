@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ItemInventory))]
 public class ItemPick : MonoBehaviour
 {
     private ItemInventory itemInventory;
