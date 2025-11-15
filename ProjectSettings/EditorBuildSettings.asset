@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Content/Global/GameResoures/Scenes/AndriiScene.unity
+    guid: 530207e81616ac641b2a90459eb23fd2
+  - enabled: 1
     path: Assets/Content/Global/GameResoures/Scenes/Main World.unity
     guid: 69ae65a84c02c9e4dabc5b2ff1b6015c
   - enabled: 1

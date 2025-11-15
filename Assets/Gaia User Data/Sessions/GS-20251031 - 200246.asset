@@ -41,11 +41,32 @@ MonoBehaviour:
     sessionPlaybackState: 1
     m_terrainsFoldedOut: 0
     m_serializedExternalAction: 
+  - m_description: 'Updating World To: 1 x 1 tiles, tile size: 1024'
+    m_operationType: 14
+    m_isActive: 1
+    m_affectedTerrainNames: []
+    m_operationDateTime: 14.11.2025 23:35:41
+    scriptableObjectAssetGUID: cd57f2e556e780845808716b179bf3ae
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Multiple Spawners (4)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20251031 - 200247
+    m_operationDateTime: 15.11.2025 0:12:51
+    scriptableObjectAssetGUID: a43639dde69f15b4a84a99eff8c1f2e1
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
   m_terrainMinMaxCache:
   - guid: 068e5257b4249114e8f6749c695eb55f
     isWorldmap: 0
-    recalculate: 1
-    min: 12.000183
-    max: 20.000305
+    recalculate: 0
+    min: 0
+    max: 219.47209
   m_bakedMaskCacheEntries: []
   m_worldBiomeMaskSettings: {fileID: 0}
