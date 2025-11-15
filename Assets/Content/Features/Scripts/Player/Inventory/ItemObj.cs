@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class ItemObj : MonoBehaviour, IItemObj
 {
-    public int count;
-    public Items.Item itemType;
+    [SerializeField] private int count = 1;
+    [SerializeField] private Item itemType;
     public int Count()
     {
         return count;
     }
-    public Items.Item ItemType()
+    
+    public Item ItemType()
     {
         return itemType;
     }

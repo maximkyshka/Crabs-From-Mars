@@ -1,6 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
+[RequireComponent(typeof(PhotonView))]
 public class CharacterOverViev : MonoBehaviour
 {
     [Header("Charercter")]
@@ -37,7 +38,10 @@ public class CharacterOverViev : MonoBehaviour
         
         if (model != null)
         {
-            Destroy(model.GetComponentInChildren<GameObject>());
+            foreach (Transform child in model) {
+                Destroy(child.gameObject);
+            }
+            
             Instantiate(characterSettings?.Model, model);
         }
     }

@@ -1,92 +1,102 @@
-using System;
+// Файл: ItemInventory.cs
+
 using UnityEngine;
-using static Items;
 
 public class ItemInventory : MonoBehaviour
 {
-    [SerializeField] private ItemViev[] itemVievs;
-    [SerializeField] private Item[] items;
-    [SerializeField] private int[] itemsNum;
+    [Header("UI")]
+    [SerializeField] private ItemView[] itemViews;
     
-    [SerializeField] private Item Null;
+    [Header("Data")]
+    [SerializeField] private InventorySlot[] slots;
     
     [SerializeField] private int itemSelected;
-
-    private void Awake()
+    
+    private void Start()
     {
-        ReloadHotBar();
+        if (slots.Length != itemViews.Length)
+        {
+            return;
+        }
+        ReloadInventoryUI();
     }
 
-    public bool UseItem(int index, int num)
+    public bool UseItem(int index, int amount)
     {
-        if(items[index] != Null && itemsNum[index] >= num)
+        if (index < 0 || index >= slots.Length) return false;
+
+        if (slots[index].item != null && slots[index].count >= amount)
         {
-            if(items[index].IsStackable) itemsNum[index] -= num;
-            ReloadHotBar();
+            if (slots[index].item.IsStackable)
+            {
+                slots[index].count -= amount;
+            }
+            else
+            {
+                slots[index].count = 0;
+            }
+
+            if (slots[index].count <= 0)
+            {
+                slots[index].Clear();
+            }
+
+            ReloadInventoryUI();
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
     
-    public bool AddItem(Item item, int num)
+    public bool AddItem(Item itemToAdd, int amount)
     {
-        int slot = -1;
-        
-        for (int i = 0; i < items.Length; i++)
+        if (itemToAdd.IsStackable)
         {
-            if (items[i] == item && slot == -1)
+            foreach (InventorySlot slot in slots)
             {
-                slot = i;
-            }
-        }
-        
-        if (slot == -1)
-        {
-            if (items[itemSelected] != Null)
-            {
-                for (int i = 0; i < items.Length; i++)
+                if (slot.item == itemToAdd)
                 {
-                    if (items[i] == Null && slot == -1)
-                    {
-                        itemsNum[slot] = 0;
-                        slot = i;
-                    }
+                    slot.count += amount;
+                    ReloadInventoryUI();
+                    return true;
                 }
             }
-            else
-            {
-                slot = itemSelected;
-            }
         }
-        
-        if (slot != -1)
+
+        if (slots[itemSelected].item == null)
         {
-            return false;
-        }
-        else
-        {
-            items[slot] = item;
-            itemsNum[slot] += item.IsStackable ? num : -1;
-            ReloadHotBar();
+            slots[itemSelected].item = itemToAdd;
+            slots[itemSelected].count = itemToAdd.IsStackable ? amount : 1;
+            ReloadInventoryUI();
             return true;
         }
+        
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == null)
+            {
+                slots[i].item = itemToAdd;
+                slots[i].count = itemToAdd.IsStackable ? amount : 1;
+                ReloadInventoryUI();
+                return true;
+            }
+        }
+
+        Debug.Log("Інвентар повний, неможливо додати " + itemToAdd.name);
+        return false;
     }
 
-    private void ReloadHotBar()
+    private void ReloadInventoryUI()
     {
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
-            if (itemsNum[i] <= 0)
+            if (slots[i].item != null && slots[i].count > 0)
             {
-                itemVievs[i].SetItem(Null, 1, i);
-                items[i] = Null;
+                itemViews[i].SetItem(slots[i].item, slots[i].count, i);
             }
             else
             {
-                itemVievs[i].SetItem(items[i], itemsNum[i], i);
+                if(slots[i].item != null) slots[i].Clear();
+                itemViews[i].Clear();
             }
         }
     }
